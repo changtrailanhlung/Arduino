@@ -19,7 +19,32 @@ byte degree[8] = {
   0B00000
 };
 
-RTC_DS1307 DS1307;
+byte thermometro[8] = //icon for termometer
+{
+  B00100,
+  B01010,
+  B01010,
+  B01110,
+  B01110,
+  B11111,
+  B11111,
+  B01110
+};
+
+
+byte igrasia[8] = //icon for water droplet
+{
+  B00100,
+  B00100,
+  B01010,
+  B01010,
+  B10001,
+  B10001,
+  B10001,
+  B01110,
+};
+
+RTC_DS1307 rtc;
 //RTCDateTime dt;
 char daysOfTheWeek[7][7] = {
   "Sun",
@@ -42,27 +67,29 @@ void setup() {
 
   lcd.init();
   lcd.createChar(1, degree);
+  lcd.createChar(2, thermometro);
+  lcd.createChar(3, igrasia);
 
-  DS1307.begin();
+  rtc.begin();
   //  clock.setDateTime(__DATE__, __TIME__);
-//  clock.adjust(DateTime(F(__DATE__), F(__TIME__)));
-
-
-   if (! DS1307.begin()) 
-   {
-   Serial.println("Couldn't find RTC");
-   while (1);
-   }
-  
-  if (! DS1307.isrunning()) 
-   {
-   Serial.println("RTC is NOT running!");
-  // // following line sets the RTC to the date & time this sketch was compiled
-   DS1307.adjust(DateTime(F(__DATE__), F(__TIME__)));
-  // // This line sets the RTC with an explicit date & time, for example to set
-  // // January 21, 2014 at 3am you would call:
-  // // rtc.adjust(DateTime(2014, 1, 21, 3, 0, 0));
-   }
+  rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+//
+//
+//   if (! rtc.begin()) 
+//   {
+//   Serial.println("Couldn't find RTC");
+//   while (1);
+//   }
+//  
+//  if (! rtc.isrunning()) 
+//   {
+//   Serial.println("RTC is NOT running!");
+//   // following line sets the RTC to the date & time this sketch was compiled
+//   rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+//   // This line sets the RTC with an explicit date & time, for example to set
+//   // January 21, 2014 at 3am you would call:
+//   // rtc.adjust(DateTime(2014, 1, 21, 3, 0, 0));
+//   }
 }
 
 void loop() {
@@ -77,11 +104,11 @@ void loop() {
 //  Serial.println();               
 
   //  dt = clock.getDateTime();
-  DateTime now = DS1307.now();
+  DateTime now = rtc.now();
 
   lcd.backlight();
 
-  lcd.setCursor(0, 1);
+  lcd.setCursor(6, 1);
   lcd.print(now.day(), DEC);
   lcd.print('/');
   lcd.print(now.month(), DEC);
@@ -91,25 +118,28 @@ void loop() {
 //  lcd.print(daysOfTheWeek[now.dayOfTheWeek()]);
 //  lcd.println(") ");
 
-  lcd.setCursor(1, 0);
+  lcd.setCursor(7, 0);
   lcd.print(now.hour(), DEC);
   lcd.print(':');
   lcd.print(now.minute(), DEC);
   lcd.print(':');
   lcd.print(now.second(), DEC);
-//  lcd.print(" ");
+  lcd.print(" ");
+  lcd.print(" ");
 //  lcd.println();
   
 
   if (isnan(t) || isnan(h)) {} else {
-    lcd.setCursor(10, 0);
-    lcd.print("T:");
+    lcd.setCursor(0, 0);
+//    lcd.print("T:");
+    lcd.write(2);
     lcd.print(round(t));
     lcd.write(1);
     lcd.print("C");
 
-    lcd.setCursor(11, 1);
-    lcd.print("H:");
+    lcd.setCursor(0, 1);
+//    lcd.print("H:");
+    lcd.write(3);
     lcd.print(round(h));
     lcd.print("%");
   }
