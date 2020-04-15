@@ -6,3 +6,5 @@
 | LCD 20x4 | 1 |
 
 *I edited it from a foreign library*
+
+<img src="https://imgur.com/a/QGtDVim">
