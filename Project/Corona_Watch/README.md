@@ -7,4 +7,4 @@
 
 *I edited it from a foreign library*
 
-<img src="https://imgur.com/a/QGtDVim">
+<img src="https://imgur.com/xppCPq1">
