@@ -7,4 +7,4 @@
 
 *I edited it from a foreign library*
 
-<img src="https://imgur.com/xppCPq1">
+<img src="https://github.com/lhnguyen99/Arduino/blob/master/Project/Corona_Watch/img/DSC_1829.JPG">
