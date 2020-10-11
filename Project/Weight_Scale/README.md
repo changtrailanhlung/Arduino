@@ -1,6 +1,6 @@
 # Weight_Scale
 *Must calibrate before you wanto to use it*
-Module:
+*Module:
 - Arduino R3
 - LCD 16x2
 - 2 battery 18650
