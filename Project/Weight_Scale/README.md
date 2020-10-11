@@ -7,3 +7,4 @@ Module:
 - 1 button (2 pin)
 - 1 Module HX711 convert ADC 24Bit LoadCell
 - 1 LoadCell 10kg
+Must calibrate before you wanto to use it
