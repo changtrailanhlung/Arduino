@@ -1,4 +1,5 @@
 # Weight_Scale
+*Must calibrate before you wanto to use it*
 Module:
 - Arduino R3
 - LCD 16x2
@@ -7,4 +8,3 @@ Module:
 - 1 button (2 pin)
 - 1 Module HX711 convert ADC 24Bit LoadCell
 - 1 LoadCell 10kg
-*Must calibrate before you wanto to use it*
