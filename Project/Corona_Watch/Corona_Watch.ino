@@ -26,13 +26,15 @@ static String build_url_from_country(String country)
 
 void setup(void)
 { 
-  lcd.init();  // initialize the lcd 
-//  lcd.begin();
+//  lcd.init();  // initialize the lcd 
+  lcd.begin();
   lcd.backlight();
   lcd.setCursor(0, 0);
   lcd.print("Covid-19 Watch");
   lcd.setCursor(0, 1);
   lcd.print(country_code);
+  lcd.setCursor(9, 3);
+  lcd.print("By LHN");
 
   delay(5000);  
 
@@ -113,7 +115,7 @@ void loop()
         lcd.print(critical);
         lcd.setCursor(8, 3);
         lcd.print(todayCases);
-        lcd.setCursor(14, 3);
+        lcd.setCursor(13, 3);
         lcd.print(totalTests);          
         
       }
