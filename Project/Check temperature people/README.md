@@ -13,4 +13,4 @@ Module:
 - Transistor 1k
 - 
 
-![](https://github.com/lhnguyen99/Arduino/blob/master/Project/Fire%20Alarm/Picture.png)
+![](https://github.com/lhnguyen99/Arduino/blob/master/Project/Check%20temperature%20people/Picture.png)
