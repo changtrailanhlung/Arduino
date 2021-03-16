@@ -11,6 +11,6 @@ Module:
 - Switch
 - Jack DC
 - Transistor 1k
-- 
+- PAM8403 3Wx2 Audio Amplifier Circuit
 
 ![](https://github.com/lhnguyen99/Arduino/blob/master/Project/Check%20temperature%20people/Picture.png)
