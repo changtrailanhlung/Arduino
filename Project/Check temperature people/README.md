@@ -5,6 +5,7 @@ Module:
 - Sensor MLX90614 (infrared thermometer for non-contact temperature measurement)
 - Sensor HC-SR04
 - DFPlayer Mini
+- SD Card
 - Speaker
 - Arduino Nano
 - Led Red, Yellow, Green (5V)
