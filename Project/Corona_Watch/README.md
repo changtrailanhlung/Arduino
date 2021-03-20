@@ -7,4 +7,6 @@
 
 *I edited it from a foreign library*
 
+
+![](https://github.com/lhnguyen99/Arduino/blob/master/Project/Date_Time_ST7920_DS1307/Picture.png)
 <img src="https://github.com/lhnguyen99/Arduino/blob/master/Project/Corona_Watch/img/DSC_1829.JPG">
