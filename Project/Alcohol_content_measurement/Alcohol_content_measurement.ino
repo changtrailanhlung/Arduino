@@ -21,6 +21,7 @@ void loop(){
   lcd.print("Alcohol");
   lcd.setCursor(0,1);
   lcd.print(val);
+  lcd.print("mg/l");
   
   delay(100);
 }
