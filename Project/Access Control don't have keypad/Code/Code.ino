@@ -191,7 +191,7 @@ void setup() {
 
 ///////////////////////////////////////// Main Loop ///////////////////////////////////
 void loop () {
-    val = digitalRead(inputPin);    // đọc giá trị đầu vào.
+  val = digitalRead(inputPin);    // đọc giá trị đầu vào.
   if (val == HIGH)                // nếu giá trị ở mức cao.(1)
   {
     delay(300);
@@ -323,8 +323,6 @@ void loop () {
         i = 0;
       }
   }
-  
-
 }
 
 /////////////////////////////////////////  Access Granted    ///////////////////////////////////
