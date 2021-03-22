@@ -49,6 +49,10 @@ char hexaKeys[rows][columns] = {
 byte row_pins[rows] = {A0, A1, A2, A3};
 byte column_pins[columns] = {2, 1, 0};
 
+int inputPin = 2;
+int val = 0;
+int pirState = LOW;
+
 
 
 ///////////////////////////////////////// Setup ///////////////////////////////////
@@ -60,6 +64,7 @@ void setup() {
   pinMode(blueLed, OUTPUT);
   pinMode(BuzzerPin, OUTPUT);
   pinMode(wipeB, INPUT_PULLUP);   // Enable pin's pull up resistor
+  pinMode(inputPin, INPUT);
 
   // Make sure leds are off
   digitalWrite(redLed, LOW);
@@ -186,6 +191,26 @@ void setup() {
 
 ///////////////////////////////////////// Main Loop ///////////////////////////////////
 void loop () {
+    val = digitalRead(inputPin);    // đọc giá trị đầu vào.
+  if (val == HIGH)                // nếu giá trị ở mức cao.(1)
+  {
+    delay(300);
+    if (pirState == LOW)
+    {
+      Serial.println("Motion detected!");
+      myServo.write(90);
+    }
+  }
+  else
+  {
+    delay(300);
+    if (pirState == HIGH)
+    {
+      Serial.println("Motion ended!");
+      pirState = LOW;
+      myServo.write(10);  
+    }  
+    }
   // System will first look for mode. if RFID mode is true then it will get the tags otherwise it will get keys
   if (RFIDMode == true) {
     do {
@@ -298,6 +323,8 @@ void loop () {
         i = 0;
       }
   }
+  
+
 }
 
 /////////////////////////////////////////  Access Granted    ///////////////////////////////////
