@@ -1,4 +1,4 @@
-# Clock NTP
+# Cardboard Vending Machine
 
 Module:
 
